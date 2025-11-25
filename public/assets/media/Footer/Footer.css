@@ -1,0 +1,231 @@
+.footer {
+
+  background-size: cover;
+  background-position: center;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px 15px;
+}
+
+.footer .widget-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-widget {
+  margin-bottom: 30px;
+  flex: 1 1 22%;
+}
+
+.footer-widget h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-widget p {
+  font-size: 16px;
+  line-height: 1.6;
+  /* color: #aaa; */
+}
+
+.footer-widget .socials {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-widget .socials li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-widget .socials a {
+  font-size: 20px;
+  /* color: blue; */
+  text-decoration: none;
+}
+
+.footer-widget .socials a:hover {
+  color: #00bcd4;
+}
+
+.footer-widget .links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-widget .links li {
+  margin-bottom: 10px;
+}
+
+.footer-widget .links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-widget .links a:hover {
+  color: #fa00ff;
+  font-weight: 600;
+}
+
+.copy-right {
+  text-align: justify;
+  margin-top: 40px;
+  font-size: 14px;
+  /* color: #aaa; */
+}
+
+
+
+.socialcard {
+  width: fit-content;
+  height: fit-content;
+  /* background-color: rgb(238, 238, 238); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 25px 25px; */
+  gap: 20px;
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055); */
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+}
+
+/* instagram*/
+.container3:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+  transform: scale(1.5);
+  border-radius: 15px;
+}
+
+/* twitter*/
+/* .container3:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+  transform: scale(1.5);
+  border-radius: 15px;
+} */
+
+/* linkdin*/
+.container0:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+  transform: scale(1.5);
+  border-radius: 15px;
+}
+
+/* Whatsapp*/
+.container1:hover {
+  background-color: #25d366;
+  transition-duration: 0.3s;
+  transform: scale(1.5);
+  border-radius: 15px;
+}
+
+/* Whatsapp*/
+.container2:hover {
+  background-color: #047bc1;
+  transition-duration: 0.3s;
+  transform: scale(1.5);
+  border-radius: 15px;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 18px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+.gmap_canvas {
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.copy-right {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  text-align: end;
+  margin-top: 20px;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.working-hours {
+  margin-top: 20px;
+}
+
+.working-hours h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.working-hours p {
+  font-size: 16px;
+  line-height: 1.6;
+  /* color: #aaa; */
+}
+
+.working-hours i {
+  margin-right: 10px;
+
+  /* You can change the color to suit your design */
+}
+
+@media (max-width: 768px) {
+  .footer-map {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .container {
+
+    padding: 25px 35px;
+  }
+
+  .working-hours {
+    width: 100% !important;
+  }
+}

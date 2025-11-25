@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Layout wrapper === */
+#root{
+  overflow-x: hidden;
+
+}
+.projects-showcase-section {
+  padding: 80px 0;
+  box-sizing: border-box;
+}
+
+/* Header: centered title + top-right button */
+.projects-header {
+  position: relative;
+  margin-bottom: 26px;
+  padding-right: 120px; /* space for button so it doesn't overlap on small widths */
+}
+.projects-header h5 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.9rem;
+  letter-spacing: 0.6px;
+  margin: 0;
+  color: #0d1b2a;
+}
+
+
+/* View All button (top-right) */
+.header-btn16 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background .2s;
+  z-index: 50;
+}
+.header-btn16:hover { background: #0056b3; }
+
+/* === Scroll container + safe area for arrows === */
+.projects-scroll-container-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  /* provide safe space so arrows don't overlap cards or get clipped */
+  padding: 0 70px;
+  box-sizing: border-box;
+}
+
+/* Remove the wrapper padding in grid mode so the grid aligns flush with container */
+.projects-scroll-container-wrapper.grid-mode {
+  padding: 0;
+}
+
+/* Horizontal scroll container (default single row) */
+.projects-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 25px;
+  padding: 20px 10px;
+  cursor: grab;
+  scrollbar-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.projects-scroll-container::-webkit-scrollbar { display: none; }
+
+/* === Grid mode when View All clicked === */
+/* 4 columns on large screens, 2 on medium, 1 on small */
+.grid-layout {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: visible !important;
+  cursor: default !important;
+}
+
+/* responsive: 2 cols on medium, 1 on small */
+@media (max-width: 1200px) {
+  .grid-layout { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 992px) {
+  .grid-layout { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-layout { grid-template-columns: 1fr; padding: 12px; }
+}
+
+/* When grid in use, ensure cards use full width of grid column (no min-width forcing) */
+.grid-layout .project-card {
+  min-width: unset !important;
+  width: 100% !important;
+}
+
+/* Hide nav arrows in grid-mode (both left and right) */
+.projects-scroll-container-wrapper.grid-mode .scroll-nav-btn { display: none !important; }
+
+/* === Card styling === */
+.project-card {
+  min-width: 320px;              /* used in horizontal scroll mode */
+  max-width: 360px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* subtle lift on hover */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Image container fixed height so hover doesn't change card height */
+.project-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  flex: 0 0 200px;
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.project-card:hover .project-image { transform: scale(1.03); }
+
+/* Type badge */
+.project-type-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 20;
+}
+
+/* Content area with fixed minimum height so expanded description won't push sibling cards */
+.project-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px; /* stabilizes card height */
+  box-sizing: border-box;
+}
+
+.project-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+/* short desc (default) */
+.project-short-desc {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* long/expanded description limited to 2 lines (prevents big gap) */
+.project-description {
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* project actions (View Project) aligned to bottom */
+.project-actions {
+  margin-top: auto; /* pushes button to bottom if space available */
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.view-project-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+}
+.view-project-btn:hover { background: #101011; color: aliceblue; }
+
+/* === Scroll arrows (safe outside area) === */
+.scroll-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 2px solid #e9ecef;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .18s, background .18s;
+}
+.scroll-nav-btn:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: #f6f8fb;
+}
+
+/* position them inside the safe padding area */
+.scroll-left-btn { left: 12px; }
+.scroll-right-btn { right: 12px; }
+
+/* smaller screens adjustments */
+@media (max-width: 992px) {
+  .projects-scroll-container-wrapper { padding: 0 28px; }
+  .scroll-left-btn, .scroll-right-btn { width: 44px; height: 44px; }
+}
+
+/* mobile: hide arrows (touch scrolling) and adapt card widths for horizontal scrolling */
+@media (max-width: 640px) {
+  .scroll-nav-btn { display: none; }
+  .project-card { min-width: 280px; max-width: 320px; }
+  .projects-header { padding-right: 12px; }
+}
+.company-card {
+  text-align: center;
+  margin: 0 6px !important; /* small gap between cards */
+}
+
+.logo-box {
+  width: 160px;
+  height: 180px;          /* card height */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;      /* fills the card fully */
+  display: block;
+  border-radius: 15px;
+  border: 2px solid rgb(92, 93, 94);
+}
+.company-card:hover .logo-box {
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+.company-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.logo-box img {
+  transition: transform 0.4s ease;
+}
+
+.company-card:hover .logo-box img {
+  transform: scale(1.08);
+}
+
+.company-card:hover .logo-box {
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
