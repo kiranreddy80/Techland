@@ -73,10 +73,11 @@ const Services = () => {
       <style>{`
         *{box-sizing:border-box}
         .services-map-wrapper{
-          padding:80px 0 120px;
+          padding:20px 0 35px;
           background:linear-gradient(135deg,#0a0a0a,#120617);
           position:relative;
           overflow:hidden;
+         
         }
 
         .services-subtitle{
@@ -89,24 +90,25 @@ const Services = () => {
           margin-bottom:8px;
         }
 
-        .network-container{
-          position:relative;
-          min-height:750px;
-          margin-top:30px;
-        }
+       .network-container{
+  position:relative;
+  min-height:500px;
+  margin-top:10px;
+}
 
         /* The fixed non-moving frame */
         .services-grid{
           position:absolute;
           inset:0;
           width:1200px;
-          height:700px;
+          height:680px;
           margin:auto;
           pointer-events:none;
         }
 
         /* SERVICE CARDS */
         .service-card{
+      
           position:absolute;
           width:280px;
           padding:28px;
@@ -200,22 +202,22 @@ const Services = () => {
 
         /* Final diamond positions with proper gaps */
         .card-1.split-position { 
-          top: 80px; 
+          top: 40px; 
           left: 460px; 
           animation: none !important;
         }
         .card-2.split-position { 
-          top: 290px; 
+          top: 240px; 
           left: 750px; 
           animation: none !important;
         }
         .card-3.split-position { 
-          top: 500px; 
+          top: 420px; 
           left: 460px; 
           animation: none !important;
         }
         .card-4.split-position { 
-          top: 290px; 
+          top: 240px; 
           left: 170px; 
           animation: none !important;
         }
@@ -358,7 +360,7 @@ const Services = () => {
                   !font-bold 
                   !text-center 
                   !mt-2 
-                  !mb-10 
+                  !mb-14 
                   inline-block 
                   underline 
                   underline-offset-8 
@@ -372,10 +374,10 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="network-container mt-20" data-aos="fade-up" data-aos-delay="120">
+          <div className="network-container mt-10" data-aos="fade-up" data-aos-delay="120">
 
             {/* STATIC NEON LINES - Updated positions for new gaps */}
-            <svg className={`connection-svg ${animationState === 'split' ? 'show-lines' : ''}`} viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet">
+            <svg className={`connection-svg ${animationState === 'split' ? 'show-lines' : ''}`} viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#ff2b70" />

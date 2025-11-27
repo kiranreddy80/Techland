@@ -81,19 +81,26 @@ const ProjectsShowcase = () => {
       <div className="container">
 
         {/* Redesigned Header */}
-        <div className="projects-header w-full mb-12 flex items-center justify-between">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">Our Projects</h2>
-            <p className="text-gray-600 text-base md:text-lg">Explore the work we've crafted for our clients</p>
-          </div>
+       <div className="projects-header w-full mb-12 relative flex items-center justify-center">
 
-          <button
-            className="px-5 py-2 rounded-lg bg-black text-white font-medium hover:bg-gray-800 transition-all shadow-md"
-            onClick={() => setShowAll(s => !s)}
-          >
-            {showAll ? "View Less" : "View All"}
-          </button>
-        </div>
+  {/* Centered Heading + Description */}
+  <div className="text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">Our Projects</h2>
+    <p className="text-gray-600 text-base md:text-lg">
+      Explore the work we've crafted for our clients
+    </p>
+  </div>
+
+  {/* View All Button Exactly at Right End */}
+  <button
+    className="px-5 py-2 rounded-lg bg-black text-white font-medium hover:bg-gray-800 transition-all shadow-md absolute right-0"
+    onClick={() => setShowAll(s => !s)}
+  >
+    {showAll ? "View Less" : "View All"}
+  </button>
+
+</div>
+
 
         {/* Scroll Wrapper */}
         <div className={`projects-scroll-container-wrapper relative ${showAll ? "grid-mode" : ""}`}>
