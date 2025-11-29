@@ -370,45 +370,139 @@ const WorkProcess = () => {
           color: #4f46e5;
         }
 
-        @media (max-width: 768px) {
-          .active-step-content {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
+        /* ----------------------------------------------
+   MOBILE-OPTIMIZED WORK-PROCESS DESIGN
+   ---------------------------------------------- */
+@media (max-width: 768px) {
 
-          .steps-navigation {
-            justify-content: center;
-          }
+  .work-process-section {
+    padding: 40px 0 !important;
+  }
 
-          .step-nav-item {
-            min-width: 70px;
-          }
+  .section-header h2 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+  }
 
-          .step-nav-title {
-            font-size: 11px;
-          }
+  .section-header p {
+    font-size: 15px !important;
+    padding: 0 10px !important;
+  }
 
-          .section-header h2 {
-            font-size: 32px;
-          }
+  /* Make the whole process a vertical flow */
+  .process-flow {
+    padding: 20px !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+  }
 
-          .process-flow {
-            padding: 30px 20px;
-          }
-        }
+  .steps-navigation {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+  }
 
-        @media (max-width: 480px) {
-          .step-actions {
-            flex-direction: column;
-            gap: 20px;
-            align-items: flex-start;
-          }
+  .steps-navigation::-webkit-scrollbar {
+    display: none;
+  }
 
-          .step-controls {
-            width: 100%;
-            justify-content: space-between;
-          }
-        }
+  .step-nav-item {
+    min-width: 90px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .step-nav-title {
+    font-size: 10px !important;
+  }
+
+  /* MOBILE CARD DESIGN */
+  .active-step-content {
+    display: block !important;
+  }
+
+  .step-video {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .step-video video {
+    width: 100%;
+    height: 180px !important;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .step-info {
+    padding: 10px !important;
+    text-align: left !important;
+  }
+
+  .step-info h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .step-info p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* BUTTON DESIGN CLEAN */
+  .step-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100%;
+    align-items: stretch !important;
+  }
+
+  .btn-primary {
+    width: 100% !important;
+    justify-content: center;
+    padding: 12px 0 !important;
+    font-size: 15px;
+  }
+
+  .step-controls {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .nav-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0 !important;
+    font-size: 14px !important;
+  }
+}
+/* ---------------------------------------------------
+   HIDE STEP NAVIGATION & PROGRESS BAR ON MOBILE
+   --------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Hide the horizontal steps menu */
+  .steps-navigation {
+    display: none !important;
+  }
+
+  /* Hide the progress bar */
+  .progress-container {
+    display: none !important;
+  }
+
+  /* Increase spacing since items are hidden */
+  .process-flow {
+    padding-top: 10px !important;
+  }
+}
+
       `}</style>
     </div>
   );

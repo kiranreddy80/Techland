@@ -230,7 +230,8 @@ const Portfolio = () => {
       </div>
 
       {/* Premium Stats Cards */}
-     <div className="container mx-auto px-4 -mt-20 relative z-20 mb-20">
+     <div className="container mx-auto px-4 -mt-20 relative z-20 mb-20 stats-box-wrapper">
+
   <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
 
     {/* CARD */}
@@ -444,7 +445,9 @@ const Portfolio = () => {
                                 transition-all duration-700 -z-10"></div>
 
                 {/* IMAGE – FIXED HEIGHT (same for all) */}
-                <div className="relative w-full h-58 sm:h-60 md:h-64 overflow-hidden rounded-b-none">
+<div className="relative w-full project-card-image h-56 sm:h-60 md:h-64 overflow-hidden rounded-b-none">
+
+
                   <img
                     src={project.image || "assets/img/default-project.jpg"}
                     className="absolute inset-0 w-full h-full object-fill"

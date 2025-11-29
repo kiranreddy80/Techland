@@ -440,5 +440,217 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 28px;
 }
+/* FIX IMAGE DISAPPEARING ON MOBILE */
+.project-image-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f4f4f4;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CARD RESPONSIVENESS */
+.project-card {
+  min-width: 260px;
+  max-width: 340px;
+  width: 80vw;
+  flex-shrink: 0;
+}
+
+/* GRID MODE (View All) RESPONSIVE FIX */
+.grid-layout {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* HIDE ARROWS IN MOBILE */
+@media (max-width: 768px) {
+  .scroll-nav-btn {
+    display: none !important;
+  }
+
+  .project-card {
+    width: 90vw;
+    max-width: 400px;
+  }
+
+  .project-image-container {
+    height: 200px;
+  }
+}
+
+/* EXTRA SAFE FIX FOR MOBILE SCROLL */
+.projects-scroll-container {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  display: flex;
+  gap: 25px;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+/* our project section view all heading mobile responsive */
+/* Fix header + View All mixing on mobile */
+@media (max-width: 600px) {
+  .projects-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .projects-header button {
+    position: static !important;
+    margin-top: 8px;
+    width: fit-content;
+  }
+}
+
+/* conctact us mobile responsive */
+/* -------------------------------------------------------
+   FIX CONTACT PAGE MOBILE RESPONSIVENESS
+   ------------------------------------------------------- */
+@media (max-width: 600px) {
+
+  /* Fix heading & description overlapping */
+  .header-area-service .heading20 {
+    padding: 10px 5px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .header-area-service h2 {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+    margin-top: 5px !important;
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .header-area-service p {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-top: 5px !important;
+    margin-bottom: 15px !important;
+    padding-right: 5px !important;
+  }
+
+  /* Fix overriding issue: ensure spacing below title */
+  .header-area-service {
+    margin-bottom: 20px !important;
+  }
+
+  /* Reduce map height slightly */
+  .contact14-section-area .mapouter {
+    min-height: 260px !important;
+    height: 260px !important;
+    margin-top: 20px !important;
+  }
+
+  .contact14-section-area .gmap_canvas iframe {
+    height: 260px !important;
+    min-height: 260px !important;
+  }
+
+  /* Give breathing room between form & map */
+  .contact-input-area {
+    margin-bottom: 20px !important;
+  }
+
+}
+/* portfolio css mobile responsive */
+/* ----------------------------------------------------
+   MOBILE FIXES FOR PORTFOLIO PAGE
+   ---------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Hide category filter row on mobile */
+  .sticky .flex-wrap:last-child {
+    display: none !important;
+  }
+
+  /* Show only top 3 tabs (All / Mobile / Web) */
+  .project-type-tabs,
+  .sticky .flex-wrap:first-child {
+    display: flex !important;
+  }
+
+  /* Fix image height (because h-58 is invalid) */
+  .project-card-image,
+  .project-card-image img {
+    height: 220px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+  }
+
+  /* Card spacing reduced */
+  .portfolio-card {
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Title more tight */
+  .portfolio-card h3 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Description limit */
+  .portfolio-card p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Tech stack chips */
+  .portfolio-card .tech-chip {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Buttons formatting */
+  .portfolio-card .actions {
+    padding-top: 10px !important;
+  }
+
+  .portfolio-card .actions a {
+    padding: 8px 12px !important;
+    font-size: 11px !important;
+  }
+
+  /* Reduce gap between cards */
+  .portfolio-grid {
+    gap: 20px !important;
+  }
+
+}
+@media (max-width: 768px) {
+  .project-card-image,
+  .project-card-image img {
+    height: 220px !important;
+    object-fit: cover !important;
+  }
+}
+/* FIX: Stats boxes overlapping mobile navbar */
+@media (max-width: 768px) {
+  .stats-box-wrapper {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+  }
+
+  /* Reduce scale & spacing for mobile so it fits neatly */
+  .stats-box-wrapper .grid > div {
+    transform: scale(0.92) !important;
+    margin-top: 10px !important;
+  }
+}
 
 

@@ -299,56 +299,7 @@ export const categories = {
             // Add the corresponding image
         },
         
-        // {
-        //     id: 8,
-        //     title: "BigBag",
-        //     description:
-        //         "An e-commerce platform for purchasing and managing bulk orders.",
-        //     link: "https://bigbag.dokans.website/",
-        //     technologies_used: ["React", "Node.js", "MongoDB"],
-        //     status: "Live",
-        //     platform: "Web",
-        //     image: bigbag,
-        //     project_overview:
-        //         "BigBag is a feature-rich e-commerce platform designed to provide users with a seamless online shopping experience. It offers a wide range of products, a secure checkout process, and an intuitive user interface. The platform is built with React for a dynamic frontend, Node.js for a scalable backend, and MongoDB for efficient data management. It also integrates Stripe API for secure transactions and optimized performance for a smooth shopping experience.",
-        //     features: [
-        //         "SEO-friendly product pages with structured data",
-        //         "Secure and seamless checkout with Stripe API",
-        //         "Mobile-responsive design for a smooth user experience",
-        //         "Real-time inventory and order management system",
-        //         "User-friendly admin panel for product and order tracking",
-        //     ],
-        //     timeline: {
-        //         "Planning & Research": "3 weeks",
-        //         "UI/UX Design": "4 weeks",
-        //         "Backend Development": "5 weeks",
-        //         "Frontend Development": "6 weeks",
-        //         "Integration & Testing": "3 weeks",
-        //         "Final Deployment": "1 week",
-        //     },
-        //     challenges: [
-        //         {
-        //             problem: "Handling high traffic and ensuring fast load times",
-        //             solution:
-        //                 "Implemented caching strategies, optimized API calls, and used a CDN for asset delivery",
-        //         },
-        //         {
-        //             problem: "Ensuring secure transactions and data protection",
-        //             solution:
-        //                 "Integrated Stripe API for secure payments and implemented data encryption",
-        //         },
-        //         {
-        //             problem: "Managing a large inventory with dynamic updates",
-        //             solution:
-        //                 "Used MongoDB for real-time inventory tracking and optimized database queries",
-        //         },
-        //         {
-        //             problem: "Enhancing SEO for better search engine visibility",
-        //             solution:
-        //                 "Implemented structured product data, optimized metadata, and improved page speed",
-        //         },
-        //     ],
-        // },
+        
         {
             id: 8, // Unique ID for the project
             title: "Active Itzone Ecommerce Demo",
