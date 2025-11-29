@@ -196,7 +196,8 @@ const Portfolio = () => {
           className="star2 keyframe5 opacity-30"
         />
         
-        <div className="container relative z-10">
+        <div className="container relative z-[9999] portfolio-hero-text">
+
           <div className="row">
             <div className="col-lg-10 m-auto">
               <div className="py-20 md:py-32 text-center">
@@ -319,7 +320,8 @@ const Portfolio = () => {
 
 
       {/* Premium Filters */}
-     <div className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-indigo-100">
+    <div className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-indigo-100 portfolio-tabs-wrapper">
+
   <div className="container mx-auto px-4 py-6">
 
     {/* PROJECT TYPE TABS */}

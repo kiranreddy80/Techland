@@ -639,18 +639,32 @@
     object-fit: cover !important;
   }
 }
-/* FIX: Stats boxes overlapping mobile navbar */
+
+
 @media (max-width: 768px) {
-  .stats-box-wrapper {
-    margin-top: 0 !important;
-    padding-top: 20px !important;
+  .portfolio-hero {
+    z-index: 1 !important;
   }
 
-  /* Reduce scale & spacing for mobile so it fits neatly */
-  .stats-box-wrapper .grid > div {
-    transform: scale(0.92) !important;
-    margin-top: 10px !important;
+  .stats-box-wrapper {
+    z-index: 1 !important;
+    margin-top: 20px !important;
+  }
+
+  @media (max-width: 768px) {
+  .portfolio-tabs-wrapper {
+    position: relative !important;   /* remove sticky behavior */
+    top: unset !important;           /* remove top-0 sticking */
+    z-index: 1 !important;           /* put behind navbar */
+    background: transparent !important; /* optional */
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-hero-text {
+    z-index: 1 !important;          /* sends text behind navbar */
+    position: relative !important;
+    padding-top: 60px !important;   /* add breathing room so text doesn't touch menu */
   }
 }
 
-
+}
